@@ -1,0 +1,547 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Консалтинг Успех</title>
+    <!--<link rel="icon" href="icons/favicon.png" type="image/vnd.microsoft.icon">-->
+    <link rel="shortcut icon" type="image/png" href="{% static 'icons/favicon.png'%}"/>
+    <!-- Stylesheets -->
+    <link type="text/css" href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic,500italic,500,300italic,300'
+        rel='stylesheet' type='text/css'>
+    <link type="text/css" href="{% static 'icons/font-awesome/css/font-awesome.css'%}" rel="stylesheet">
+    <link type="text/css" href="{% static 'icons/rondo/style.css'%}" rel="stylesheet">
+    <link href="{% static 'css/jquery.fancybox.css'%}" rel="stylesheet" type="text/css" />
+    <link type="text/css" href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+<body >
+    <header class="header" id="jump">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="{%  static 'img/logo.png' %}" alt="" /></a>
+                </div>
+                <div class="collapse navbar-collapse hidden-xs">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#jump0">Вверх</a></li>
+                        <li><a href="#jump1">Услуги</a></li>
+                        <li><a href="#jump2">Новости</a></li>
+                        <li><a href="#jump5">О нас говорят</a></li>
+                        <!--<li><a href="#jump3">Pricing</a></li>
+                        <li><a href="#jump4">Our Team</a></li>-->
+                        <li><a href="#jump6">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+                <!--<div class="collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#jump0" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            Вверх</a></li>
+                        <li><a href="#jump1" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            Услуги</a></li>
+                        <li><a href="#jump2" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            Новости</a></li>
+                        <li><a href="#jump3" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            Pricing</a></li>
+                        <li><a href="#jump4" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            Team</a></li>
+                        <li><a href="#jump5" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            О нас говорят</a></li>
+                        <li><a href="#jump6" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            Контакты</a></li>
+                    </ul>
+                </div>-->
+                <!-- /.navbar-responsive-collapse -->
+            </div>
+        </nav>
+    </header>
+    <div class="jumper" id="jump0">
+    </div>
+    <div class="section type-1 big splash">
+        <div class="splash-cover">
+        </div>
+        <div class="container">
+            <div class="splash-block">
+                <div class="centered">
+                    <div class="container">
+                        <div class="section-headlines">
+                            <h1>
+                                Консалтинг успех - мы ведем учет</h1>
+                            <p>
+                                Бухгалтерия без проблем!!!</p>
+                        </div>
+                        <a href="#jump1" class="btn btn-outline btn-lg" >Мы готовы предложить </a>&nbsp;
+                        <a href="#jump6" class="btn btn-outline btn-lg">Сообщить нам!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="jump1" class="jumper">
+    </div>
+    <div class="section type-2">
+        <div class="container">
+            <div class="section-headlines">
+                <h4>
+                    Наши услуги</h4>
+                <div>
+                    <p style="text-align: justify;"> Вам нужна надежная бухгалтерская компания? Фирма «Консалтинг Успех» позаботится о Вашей бухгалтерии!
+                    Наши квалифицированные специалисты способны оперативно решить любые задачи, относящиеся к налоговому и бухгалтерскому учету.
+                    Мы избавим Вас от неоправданных расходов, связанных с поиском и наймом штатного бухгалтера. Бухгалтерское обслуживание
+                    предприятий от Нашей компании - гарантия качественного выполнения услуг</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 features">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne_1">
+                                        Комплексное бухгалтерское сопровождение малого бизнеса<i class="icon-minus"></i><i class="icon-plus"></i></a>
+                                </h3>
+                            </div>
+                            <div id="collapseOne_1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p style="text-align: justify;"> При комплексном бухгалтерском сопровождении мы берем на себя функции бухгалтерии, подходя к
+                                        выполнению любых операций ответственно и максимально внимательно при ведении делопроизводства и обработке первичных документов Вашего предприятия.
+                                        В рамках бухгалтерского сопровождения мы осуществляем:</p>
+                                    <ul class="icons-ul">
+                                        <li><i class="icon-li icon-ok"></i>учетная политика по БУ;</li>
+                                        <li><i class="icon-li icon-ok"></i>учетная политика по НУ</li>
+                                        <li><i class="icon-li icon-ok"></i>подготовка первичных документов (банковские и кассовые, по реализации товаров, работ, услуг, по учету материалов, авансовые отчеты)</li>
+                                        <li><i class="icon-li icon-ok"></i>ввод первичных документов в программу 1C;</li>
+                                        <li><i class="icon-li icon-ok"></i>формирование регистров бухгалтерского учета;</li>
+                                        <li><i class="icon-li icon-ok"></i>формирование налоговых регистров;</li>
+                                        <li><i class="icon-li icon-ok"></i>подготовка бухгалтерской отчетности;</li>
+                                        <li><i class="icon-li icon-ok"></i>подготовка налоговой отчетности;</li>
+                                        <li><i class="icon-li icon-ok"></i>подготовка статистической отчетности;</li>
+                                        <li><i class="icon-li icon-ok"></i>книга учета доходов и расходов;</li>
+                                        <li><i class="icon-li icon-ok"></i>проведение сверки расчетов по налогам и взносам с подписанием акта;</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseTwo_2">Возврат НДС <i class="icon-plus"></i><i class="icon-minus">
+                                        </i></a>
+                                </h3>
+                            </div>
+                            <div id="collapseTwo_2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p style="text-align: justify;">В рамках задачи мы консультируем клиента, собираем все необходимые документы и
+                                        взаимодействуем с налоговым органом от имени налогоплательщика. Вы можете обратиться за полным комплексом услуг
+                                        или получить помощь по отдельному аспекту этой работы:
+                                    </p>
+                                    <ul class="icons-ul">
+                                        <li><i class="icon-li icon-ok"></i>Консультации по вопросам оформления документов, необходимых для последующего возврата НДС.</li>
+                                        <li><i class="icon-li icon-ok"></i>Подготовка пакета документов по требованию инспекции с учетом конкретной проверяемой декларации, камеральной проверки, формирование и подача всех документов необходимых для сдачи в налоговый орган.</li>
+                                        <li><i class="icon-li icon-ok"></i>Защита прав и законных интересов налогоплательщика при налоговой проверке</li>
+                                        <li><i class="icon-li icon-ok"></i>Выявление и возврат налоговых переплат по различным налогам;</li>
+                                        <li><i class="icon-li icon-ok"></i>Возврат из бюджета (зачет) НДС при внешнеторговых операциях;</li>
+                                        <li><i class="icon-li icon-ok"></i>Подготовка и подача декларации\заявления в налоговый орган для возмещения НДС путем зачета или возврата;</li>
+                                        <li><i class="icon-li icon-ok"></i>Анализ и проверка всех первичных документов по расчетам с поставщиками, проверка налоговых деклараций;</li>
+                                        <li><i class="icon-li icon-ok"></i>Представительство в налоговых органах по всем вопросам, связанных с возмещением НДС;</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseThree_3">Разовые бухгалтерские услуги <i class="icon-plus"></i><i class="icon-minus">
+                                        </i></a>
+                                </h3>
+                            </div>
+                            <div id="collapseThree_3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p style="text-align: justify"> Наша компания отличается четкой организацией процесса оказания услуг, постоянным
+                                        совершенствованием бизнес-процессов и методов ведения учета, что в конечном итоге
+                                        неизменно приводит к повышению эффективности работы: </p>
+                                     <ul class="icons-ul">
+                                        <li><i class="icon-li icon-ok"></i>Консультационные услуги;</li>
+                                        <li><i class="icon-li icon-ok"></i>Отправка налоговой отчетности;</li>
+                                        <li><i class="icon-li icon-ok"></i>Нулевая отчетность;</li>
+                                        <li><i class="icon-li icon-ok"></i>Регистрация ИП и юридических лиц;</li>
+                                        <li><i class="icon-li icon-ok"></i>Помощь при подборе бухгалтеров;</li>
+                                        <li><i class="icon-li icon-ok"></i>Оптимизация налогов;</li>
+                                        <li><i class="icon-li icon-ok"></i>Ликвидация юридических лиц;</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visible-xs visible-sm">
+                        <br class="gap-30" />
+                        <hr class="gap-divider" />
+                        <br class="gap-30" />
+                    </div>
+                </div>
+                <div class="col-lg-6 features">
+                    <div class="panel-group" id="accordion_1">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_1" href="#collapseOne">
+                                        Функции главного бухгалтера <i class="icon-plus"></i><i class="icon-minus"></i></a>
+                                </h3>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p style="text-align: justify;">При бухгалтерском сопровождении мы берем на себя функции главного бухгалтера, а делопроизводство и обработку первичных документов осуществляют сотрудники Вашего предприятия (внутренняя бухгалтерия, оператор).
+                                    В рамках бухгалтерского сопровождения мы осуществляем:</p>
+                                    <ul class="icons-ul">
+                                        <li><i class="icon-li icon-ok"></i>разработку учетной политики Вашего предприятия;</li>
+                                        <li><i class="icon-li icon-ok"></i>расчет налогов</li>
+                                        <li><i class="icon-li icon-ok"></i>составление регистров бухгалтерского и налогового учета</li>
+                                        <li><i class="icon-li icon-ok"></i>составление внешней бухгалтерской отчетности в НУ, органы статистического учета;</li>
+                                        <li><i class="icon-li icon-ok"></i>защиту интересов Вашего предприятия в НУ, органах статистического учета;</li>
+                                        <li><i class="icon-li icon-ok"></i>анализ хозяйственных договоров в бухгалтерском и налоговом аспектах;</li>
+                                        <li><i class="icon-li icon-ok"></i>анализ взаиморасчетов с дебиторами/кредиторами;</li>
+                                        <li><i class="icon-li icon-ok"></i>консультации по налогообложению;</li>
+                                        <li><i class="icon-li icon-ok"></i>координацию работы сотрудников Вашей бухгалтерии (постановка задач и контроль);</li>
+                                        <li><i class="icon-li icon-ok"></i>помощь в автоматизации, постановке и ведении учета в программе 1С, работе в системе Клиент-банк;</li>
+                                        <li><i class="icon-li icon-ok"></i>организацию электронной сдачи отчетности;</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion_1"
+                                        href="#collapseTwo">Проверка налогового и/или бухгалтерского учета <i class="icon-plus"></i><i class="icon-minus">
+                                        </i></a>
+                                </h3>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p style="text-align: justify;">Целью проверки налогового учета является проверка полноты и своевременности начисления и уплаты налогов и
+                                    сборов и проверка степени готовности Вашей компании к возможным контрольным мероприятиям со стороны налоговых органов.
+                                    Мероприятия по проведению проверки налогового учета включают в себя.</p>
+                                    <ul class="icons-ul">
+                                        <li><i class="icon-li icon-ok"></i>проверку полноты и своевременности отражения первичных документов в регистрах бухгалтерского и налогового учета;</li>
+                                        <li><i class="icon-li icon-ok"></i>проверку соответствия данных регистров бухгалтерского и налогового учета показателям бухгалтерской и налоговой отчетности;</li>
+                                        <li><i class="icon-li icon-ok"></i>анализ договорной базы и ее соответствие существующим финансово – хозяйственным взаимоотношениям с контрагентами и требованиям законодательства;</li>
+                                        <li><i class="icon-li icon-ok"></i>выявление специфических, нестандартных операций и действий при ведении текущей финансово – хозяйственной деятельности и оценка их влияния на налогообложение;</li>
+                                        <li><i class="icon-li icon-ok"></i>проверку полноты формирования налоговой базы по всем налогам, уплачиваемым предприятием;</li>
+                                        <li><i class="icon-li icon-ok"></i>проверку сроков уплаты налогов и сроков сдачи деклараций и их соответствие срокам, установленным налоговым законодательством;</li>
+                                        <li><i class="icon-li icon-ok"></i>анализ взаиморасчетов с дебиторами/кредиторами;</li>
+                                        <li><i class="icon-li icon-ok"></i>Проверку соответствия первичных документов требованиям нормативно-правовых актов;</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion_1"
+                                        href="#collapseThree">Восстановление учета <i class="icon-plus"></i><i class="icon-minus">
+                                        </i></a>
+                                </h3>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p style="text-align: justify">Восстановление бухгалтерского учета представляет собой услугу по приведению бухгалтерского учета организации в
+                                    надлежащее состояние в соответствии с законодательством</p>
+                                     <ul class="icons-ul">
+                                        <li><i class="icon-li icon-ok"></i>Проверка состояния бухгалтерского учета. На данном этапе происходит определение необходимости привлечения сторонних специалистов для оказания данной услуги;</li>
+                                        <li><i class="icon-li icon-ok"></i>Планирование и согласование с заказчиком объемов работ по проведению восстановления;</li>
+                                        <li><i class="icon-li icon-ok"></i>Сбор и восстановление первичных документов. На данном этапе также проводится сверка расчетов с основными контрагентами;</li>
+                                        <li><i class="icon-li icon-ok"></i>Собственно исправление либо создание заново регистров бухгалтерского и налогового учета;</li>
+                                        <li><i class="icon-li icon-ok"></i>Согласование сумм налогов и сборов, уплата выявленных недоимок и пени;</li>
+                                        <li><i class="icon-li icon-ok"></i>Формирование уточненных налоговых деклараций и расчетов по страховым взносам во внебюджетные фонды. Формирование корректной бухгалтерской отчетности. Подача уточненных деклараций, расчетов и отчетности в налоговую инспекцию и внебюджетные фонды;</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visible-xs visible-sm">
+                        <br class="gap-30" />
+                        <hr class="gap-divider" />
+                        <br class="gap-30" />
+                    </div>
+                </div>
+            </div>
+            <br>
+             <div class="section-headlines">
+                <h4>
+                    Выбирая Нашу компанию Вы</h4>
+                <div>
+                    <p style="text-indent: 2%; text-align: justify;"> Cможете забыть обо всех проблемах бухучета,
+                        не вникать в постоянно изменяющиеся законы. Решение сложных вопросов, связанных с налогами, оформлением и сдачей
+                        отчетности – также наша работа. Посвятите себя развитию и продвижению основных направлений деятельности.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="jump2" class="jumper">
+    </div>
+    <div class="section type-1" style="padding-bottom: 0">
+        <div class="container">
+            <div class="section-headlines">
+                <h4>
+                    Featured Works</h4>
+                <h2>
+                    Exceptional work. Stunning viewpoints.</h2>
+                <div>
+                    There are many variations of passages of Lorem Ipsum available, but the majority
+                    have suffered alteration in some form, by injected humour, or randomised words which
+                    don't look even slightly believable.
+                </div>
+            </div>
+            <div class="mixitup">
+            <ul id="portfolio" class="unstyled">
+                <li class="mix phone">
+                    <div>
+                        <div class="media-thumb">
+                            <img src="{%  static 'img/portfolio/place-4.jpg' %}" alt="">
+                            <div class="media-desc">
+                                <div>
+                                    <p>
+                                        <b>A Project</b></p>
+                                    <div>
+                                        The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                                        or non-characteristic words etc.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mix tablet">
+                    <div>
+                        <div class="media-thumb">
+                            <img src="{% static 'img/portfolio/place-7.jpg' %}" alt="">
+                            <div class="media-desc">
+                                <div>
+                                    <p>
+                                        <b>A Project</b></p>
+                                    <div>
+                                        The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                                        or non-characteristic words etc.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="mix desktop">
+                    <div>
+                        <div class="media-thumb">
+                            <img src="{%  static 'img/portfolio/place-3.jpg' %}" alt="">
+                            <div class="media-desc">
+                                <div>
+                                    <p>
+                                        <b>A Project</b></p>
+                                    <div>
+                                        The generated Lorem Ipsum is therefore always free from repetition, injected humour,
+                                        or non-characteristic words etc.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+               </ul>
+            </div>
+        </div>
+
+         <!--end:.mixitup-->
+    </div>
+      <div id="jump5" class="jumper">
+    </div>
+    <div class="section type-2">
+        <div class="container">
+            <div class="section-headlines">
+                <h4>
+                    Testimonials</h4>
+                <h2>
+                    Read our clients talking about us!</h2>
+                <div>
+                    We worked on digital strategies for 200 brands worldwide.
+                </div>
+            </div>
+            <div id="carousel-testimonial" class="carousel slide bs-docs-carousel-example">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-testimonial" data-slide-to="0" class=""></li>
+                    <li data-target="#carousel-testimonial" data-slide-to="1" class=""></li>
+                    <li data-target="#carousel-testimonial" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="testimonial media">
+                            <div class="testimonial-avatar pull-right hidden-xs	">
+                                <img src="{%  static 'img/avatar/avatar-2.jpg' %}" class="avatar size-default img-circle" alt="">
+                            </div>
+                            <div class="testimonial-content media-body">
+                                <p class="lead">
+                                    It is a long established fact that a reader will be distracted by the readable content
+                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                                    has a more-or-less normal distribution of letters, as opposed to using 'Content
+                                    here, content here', making it look like readable English.
+                                </p>
+                                Founder at EGrappler.com - <b>John Donga</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial media">
+                            <div class="testimonial-avatar pull-right hidden-xs	">
+                                <img src="{%  static 'img/avatar/avatar-3.jpg' %}" class="avatar size-default img-circle" alt="">
+                            </div>
+                            <div class="testimonial-content media-body">
+                                <p class="lead">
+                                    It is a long established fact that a reader will be distracted by the readable content
+                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                                    has a more-or-less normal distribution of letters, as opposed to using 'Content
+                                    here, content here', making it look like readable English.
+                                </p>
+                                Founder at Greepit.com - <b>John Donga</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial media">
+                            <div class="testimonial-avatar pull-right hidden-xs	">
+                                <img src="{%  static 'img/avatar/avatar-1.jpg' %}" class="avatar size-default img-circle" alt="">
+                            </div>
+                            <div class="testimonial-content media-body">
+                                <p class="lead">
+                                    It is a long established fact that a reader will be distracted by the readable content
+                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                                    has a more-or-less normal distribution of letters, as opposed to using 'Content
+                                    here, content here', making it look like readable English.
+                                </p>
+                                Founder at EGrappler.com - <b>John Donga</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial media">
+                            <div class="testimonial-avatar pull-right hidden-xs	">
+                                <img src="{%  static 'img/avatar/avatar-1.jpg' %}" class="avatar size-default img-circle" alt="">
+                            </div>
+                            <div class="testimonial-content media-body">
+                                <p class="lead">
+                                    It is a long established fact that a reader will be distracted by the readable content
+                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it
+                                    has a more-or-less normal distribution of letters, as opposed to using 'Content
+                                    here, content here', making it look like readable English.
+                                </p>
+                                Founder at EGrappler.com - <b>John Donga</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controller btn-group">
+                    <a class="btn btn-xs btn-inverse" href="#carousel-testimonial" data-slide="prev"><i
+                        class="icon-angle-left"></i></a><a class="btn btn-xs btn-inverse" href="#carousel-testimonial"
+                            data-slide="next"><i class="icon-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="jump6" class="jumper">
+    </div>
+    <div class="section type-1 section-contact">
+        <div class="container">
+            <div class="section-headlines">
+                <h4>
+                    Свяжитесь с нами !!! </h4>
+                    <h2>
+                        Или приходите, будем рады Вам помочь!</h2>
+            </div>
+            <!-- добавление формы обратной связи-->
+            <div class="row">
+                <div class="col-lg-4">
+                    <address>
+                            Казахстан, Костанай пр. Аль-Фараби 65, офис 917
+                            Телефон:+7(7142)39-43-86 Звоните нам!
+
+                       <!-- <div class="address-row">
+                            <div class="address-sign">
+                                <i class="icon-map-marker"> Казахстан, Костанай Аль-Фараби 65, офис 917 </i>
+                                <p>Телефон:+7(7142)39-43-86 Звоните нам! </p>
+                            </div>
+
+                        </div>-->
+                    </address>
+                    <div class="visible-xs visible-sm">
+                        <br class="gap-30" />
+                        <hr class="gap-divider" />
+                        <br class="gap-30" />
+                    </div>
+                </div>
+                <div class="col-lg-7 col-lg-offset-1">
+                    <form method="post" action="#" id="contactform">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя *"><br
+                                    class="gap-15" />
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Ваш адрес электронной почты *"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Тема сообщения">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" rows="8" title=""></textarea>
+                    </div>
+                    <button id="button-send" class="btn btn-block btn-success">
+                        Отправить сообщение
+                    </button>
+                    <div id="success">
+                        Ваше сообщение отправлено</div>
+                    <div id="error">
+                        Ваше сообщение не отправлено</div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    ТОО Консалтинг - Успех &copy; 2016
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Scripts-->
+    <script type="text/javascript" src="{%  static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/jquery.smooth-scroll.min.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/jquery.mixitup.min.js' %}"></script>
+    <script src="{%  static 'js/jquery.easing.1.3.js' %}" type="text/javascript"></script>
+    <script src="{%  static 'js/modernizr.js' %}" type="text/javascript"></script>
+    <script src="{%  static 'js/jquery.fancybox.pack.js' %}" type="text/javascript"></script>
+    <script type="text/javascript" src="{%  static 'js/custom.js' %}"></script>
+</body>
+</html>
