@@ -99,90 +99,32 @@
                     предприятий от Нашей компании - гарантия качественного выполнения услуг</p>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-lg-6 features">
                     <div class="panel-group" id="accordion">
+                        <!--режем тихонечко добавляем сервисные услуги-->
+                    {%  for service in category_service %}
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne_1">
-                                        Комплексное бухгалтерское сопровождение малого бизнеса<i class="icon-minus"></i><i class="icon-plus"></i></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#{{ service.service_href }}">
+                                        {{ service.service_title }}<i class="icon-minus"></i><i class="icon-plus"></i></a>
                                 </h3>
                             </div>
-                            <div id="collapseOne_1" class="panel-collapse collapse">
+                            <div id="{{ service.service_href }}" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    <p style="text-align: justify;"> При комплексном бухгалтерском сопровождении мы берем на себя функции бухгалтерии, подходя к
-                                        выполнению любых операций ответственно и максимально внимательно при ведении делопроизводства и обработке первичных документов Вашего предприятия.
-                                        В рамках бухгалтерского сопровождения мы осуществляем:</p>
+                                    <p style="text-align: justify;"> {{ service.service_text }}</p>
                                     <ul class="icons-ul">
-                                        <li><i class="icon-li icon-ok"></i>учетная политика по БУ;</li>
-                                        <li><i class="icon-li icon-ok"></i>учетная политика по НУ</li>
-                                        <li><i class="icon-li icon-ok"></i>подготовка первичных документов (банковские и кассовые, по реализации товаров, работ, услуг, по учету материалов, авансовые отчеты)</li>
-                                        <li><i class="icon-li icon-ok"></i>ввод первичных документов в программу 1C;</li>
-                                        <li><i class="icon-li icon-ok"></i>формирование регистров бухгалтерского учета;</li>
-                                        <li><i class="icon-li icon-ok"></i>формирование налоговых регистров;</li>
-                                        <li><i class="icon-li icon-ok"></i>подготовка бухгалтерской отчетности;</li>
-                                        <li><i class="icon-li icon-ok"></i>подготовка налоговой отчетности;</li>
-                                        <li><i class="icon-li icon-ok"></i>подготовка статистической отчетности;</li>
-                                        <li><i class="icon-li icon-ok"></i>книга учета доходов и расходов;</li>
-                                        <li><i class="icon-li icon-ok"></i>проведение сверки расчетов по налогам и взносам с подписанием акта;</li>
+                                        {%  for item_name in items %}
+                                        <li><i class="icon-li icon-ok"></i>{{ item_name.service_item_text }}</li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseTwo_2">Возврат НДС <i class="icon-plus"></i><i class="icon-minus">
-                                        </i></a>
-                                </h3>
-                            </div>
-                            <div id="collapseTwo_2" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p style="text-align: justify;">В рамках задачи мы консультируем клиента, собираем все необходимые документы и
-                                        взаимодействуем с налоговым органом от имени налогоплательщика. Вы можете обратиться за полным комплексом услуг
-                                        или получить помощь по отдельному аспекту этой работы:
-                                    </p>
-                                    <ul class="icons-ul">
-                                        <li><i class="icon-li icon-ok"></i>Консультации по вопросам оформления документов, необходимых для последующего возврата НДС.</li>
-                                        <li><i class="icon-li icon-ok"></i>Подготовка пакета документов по требованию инспекции с учетом конкретной проверяемой декларации, камеральной проверки, формирование и подача всех документов необходимых для сдачи в налоговый орган.</li>
-                                        <li><i class="icon-li icon-ok"></i>Защита прав и законных интересов налогоплательщика при налоговой проверке</li>
-                                        <li><i class="icon-li icon-ok"></i>Выявление и возврат налоговых переплат по различным налогам;</li>
-                                        <li><i class="icon-li icon-ok"></i>Возврат из бюджета (зачет) НДС при внешнеторговых операциях;</li>
-                                        <li><i class="icon-li icon-ok"></i>Подготовка и подача декларации\заявления в налоговый орган для возмещения НДС путем зачета или возврата;</li>
-                                        <li><i class="icon-li icon-ok"></i>Анализ и проверка всех первичных документов по расчетам с поставщиками, проверка налоговых деклараций;</li>
-                                        <li><i class="icon-li icon-ok"></i>Представительство в налоговых органах по всем вопросам, связанных с возмещением НДС;</li>
+                        {% endfor %}
 
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseThree_3">Разовые бухгалтерские услуги <i class="icon-plus"></i><i class="icon-minus">
-                                        </i></a>
-                                </h3>
-                            </div>
-                            <div id="collapseThree_3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p style="text-align: justify"> Наша компания отличается четкой организацией процесса оказания услуг, постоянным
-                                        совершенствованием бизнес-процессов и методов ведения учета, что в конечном итоге
-                                        неизменно приводит к повышению эффективности работы: </p>
-                                     <ul class="icons-ul">
-                                        <li><i class="icon-li icon-ok"></i>Консультационные услуги;</li>
-                                        <li><i class="icon-li icon-ok"></i>Отправка налоговой отчетности;</li>
-                                        <li><i class="icon-li icon-ok"></i>Нулевая отчетность;</li>
-                                        <li><i class="icon-li icon-ok"></i>Регистрация ИП и юридических лиц;</li>
-                                        <li><i class="icon-li icon-ok"></i>Помощь при подборе бухгалтеров;</li>
-                                        <li><i class="icon-li icon-ok"></i>Оптимизация налогов;</li>
-                                        <li><i class="icon-li icon-ok"></i>Ликвидация юридических лиц;</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="visible-xs visible-sm">
                         <br class="gap-30" />
