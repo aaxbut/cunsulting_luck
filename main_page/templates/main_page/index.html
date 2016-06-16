@@ -99,12 +99,12 @@
                     предприятий от Нашей компании - гарантия качественного выполнения услуг</p>
                 </div>
             </div>
-
+            {%  for service in category_service %}
             <div class="row">
                 <div class="col-lg-6 features">
                     <div class="panel-group" id="accordion">
                         <!--режем тихонечко добавляем сервисные услуги-->
-                    {%  for service in category_service %}
+
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
+
 
                     </div>
                     <div class="visible-xs visible-sm">
@@ -132,8 +132,9 @@
                         <br class="gap-30" />
                     </div>
                 </div>
-                <div class="col-lg-6 features">
-                    <div class="panel-group" id="accordion_1">
+            {% endfor %}
+                <!--<div class="col-lg-6 features">
+                    <div class="panel-group" id="accordion">
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
@@ -217,7 +218,7 @@
                         <hr class="gap-divider" />
                         <br class="gap-30" />
                     </div>
-                </div>
+                </div>-->
             </div>
             <br>
              <div class="section-headlines">
