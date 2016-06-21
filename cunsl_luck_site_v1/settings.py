@@ -31,14 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'main_page',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main_page',
-    'favicon',
+
+    #'favicon',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -127,7 +128,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-FAVICON_PATH = STATIC_URL + 'icons/favicon.png'
+#FAVICON_PATH = STATIC_URL + 'icons/favicon.png'
+
+#TEMPLATES_DIR = (os.path.join(BASE_DIR, '/templates/'),
+#)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

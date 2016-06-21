@@ -434,9 +434,9 @@ label {
   background: url(../img/header/headerbg.jpg) center fixed no-repeat;
   position: relative;
   -moz-background-size: 100%; /* Firefox 3.6+ */
-  -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+  -webkit-background-size: 100%; /* Safari 3.1+ пїЅ Chrome 4.0+ */
   -o-background-size: 100%; /* Opera 9.6+ */
-  background-size: 100%; /* Современные браузеры */
+  background-size: 100%; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   z-index: 1;
 }
 .section.splash h1 {
