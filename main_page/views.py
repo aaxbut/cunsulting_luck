@@ -3,6 +3,7 @@ from .models import ServicesMain, ServiceItems, Contacts
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.core.mail import BadHeaderError
+import json
 
 # Create your views here.
 from django import forms
@@ -29,6 +30,15 @@ def post_contact(request):
 			#		send_mail(subject, message, 'ВАШ_EMAIL_ДЛЯ_ОТПРАВКИ_СООБЩЕНИЯ', recipients)
             print(request.POST) # тут разбираемся пустой queryset приходит
             contakt = Contacts()
+
+            #pickup_records = {}
+            pickup_records={ "success": 0 }
+            #pickup_records.append({ "email_msg": request.POST['email']})
+            #pickup_records.append({ "name_msg": request.POST['subject'] })
+            #pickup_records.append({ "message_msg": request.POST['message'] })
+
+            return HttpResponse(json.dumps(pickup_records), content_type="text/json")
+
             #contakt.subject =
         except BadHeaderError: #Защита от уязвимости
             return HttpResponse('Invalid header found')

@@ -33,8 +33,8 @@ $(function () {
 
         $.ajax({
             type: 'POST',
-            url: '#',
-            data: $('#contact_form').serialize(),
+            url: 'contact_to',
+            data: $('#contact_to').serialize(),
             success: function (html) {
                 if (html.success == '1') {
                     $('#button-send').html('Send E-Mail');
