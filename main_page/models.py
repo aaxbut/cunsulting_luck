@@ -60,10 +60,8 @@ class Contacts(models.Model):
     subject = models.CharField(max_length=250)
     message = models.TextField()
     mail_contact = models.EmailField()
+    name_from_contact = models.CharField(max_length=200)
 
     def publish(self):
         self.created_date = timezone.now()
         self.save()
-
-    def __str__(self):
-        return '{0}|| {1}'.format(self.subject, self.mail_contact)
