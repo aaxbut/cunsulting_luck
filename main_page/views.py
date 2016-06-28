@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.core.mail import BadHeaderError
 import json
-
+from .validate_feedback import valid_feedback
 # Create your views here.
 from django import forms
 
@@ -31,8 +31,9 @@ def post_contact(request):
             print(request.POST) # тут разбираемся пустой queryset приходит
             contakt = Contacts()
 
-            #pickup_records = {}
+            pickup_records = {}
             pickup_records={ "success": 0 }
+            valid_feedback(email_msg=request.POST['email'], subj_message=request.POST['subject'], message_msg = request.POST['message'], name_sender = request.POST['name'], csrf_token = request.POST['csrfmiddlewaretoken'] )
             #pickup_records.append({ "email_msg": request.POST['email']})
             #pickup_records.append({ "name_msg": request.POST['subject'] })
             #pickup_records.append({ "message_msg": request.POST['message'] })
