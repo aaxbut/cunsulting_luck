@@ -30,6 +30,8 @@ def post_contact(request):
 
             pickup_records = {}
             pickup_records={ "success": 0 }
+            valid_feedback(email_msg=request.POST['email'], subj_message=request.POST['subject'], message_msg = request.POST['message'], name_sender = request.POST['name'], csrf_token = request.POST['csrfmiddlewaretoken'] )
+
             #pickup_records.append({ "email_msg": request.POST['email']})
             #pickup_records.append({ "name_msg": request.POST['subject'] })
 
