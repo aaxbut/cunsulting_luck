@@ -9,7 +9,8 @@ $(function () {
     $('.navbar-nav a').click(function (e) {
         e.preventDefault();
         $(this).parent('li').toggleClass('active');
-        $(this).parent('li').siblings('.active').removeClass('active');
+       // $(this).parent('li').siblings('.active').removeClass('active');
+        $(this).find("a").attr("href");
     })
 
     $('.header .navbar-nav a').smoothScroll();

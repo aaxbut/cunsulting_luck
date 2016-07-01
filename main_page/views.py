@@ -18,38 +18,19 @@ def post_list(request):
 @csrf_exempt
 def post_contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
         try:
-           # попытка проверки и записи формы в модель
+            # попытка проверки и записи формы в модель
             print(request.POST)  # тут разбираемся пу стой queryset приходит
-            # pickup_records = {}
-            pickup_records = {"success": 0, "status_text": "все хорошо"}
-
-
-            pickup_records = {}
-            pickup_records={ "success": 0 }
-            valid_feedback(email_msg=request.POST['email'], subj_message=request.POST['subject'], message_msg = request.POST['message'], name_sender = request.POST['name'], csrf_token = request.POST['csrfmiddlewaretoken'] )
-
-            #pickup_records.append({ "email_msg": request.POST['email']})
-            #pickup_records.append({ "name_msg": request.POST['subject'] })
-
-            # pickup_records.append({ "email_msg": request.POST['email']})
-            # pickup_records.append({ "name_msg": request.POST['subject'] })
-            # pickup_records.append({ "message_msg": request.POST['message'] })
-
-
+            pickup_records = valid_feedback(email_msg=request.POST['email'], subj_message=request.POST['subject'],
+                                            message_msg=request.POST['message'], name_sender=request.POST['name'],
+                                            csrf_token=request.POST['csrfmiddlewaretoken'])
             return HttpResponse(json.dumps(pickup_records), content_type="text/json")
-
-            # contakt.subject =
         except BadHeaderError:  # Защита от уязвимости
             return HttpResponse('Invalid header found')
-        #	#Переходим на другую страницу, если сообщение отправлено
+        # #Переходим на другую страницу, если сообщение отправлено
         return render(request, 'main_page/index.html')
     return render(request, 'main_page/index.html')
 
 
 def validation_feedbak(**kwargs):
-
     return True
