@@ -15,27 +15,16 @@ $(function () {
         $(this).parent('li').toggleClass('active');
         $(this).parent('li').siblings('.active').removeClass('active');
 
-        if ($("#jump12").toggleClass('active') == true) {
-            $(this).parent('li').toggleClass('active');
-            console.log($("#jump12"));
-        }
-        else{
-                $(this).parent('li').siblings('.active').removeClass('active');
-            }
-            //console.log($("#jump12"));
 
 
         //$(this).find("a").attr("href");
     })
     $('.phone').click(function (e) {
-        window.open("certs")
+        window.open("certs", "_self");
     })
-    $('.jumper').click(function (e){
-        console.log("+")
-    //   if ($(this).parent('li').toggleClass('active')){
-        alert("sdfsf")
-        //window.open("sdfsf");
-      // }
+    $('#jump12').click(function (e){
+       //window.open("", "_self");
+        history.back();
 
     })
     $('.header .navbar-nav a').smoothScroll();
