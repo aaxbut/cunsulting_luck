@@ -1,3 +1,7 @@
+/*$(function setProject(e){
+    $(this).parent('.phone').click(setProject(e));
+
+})*/
 $(function () {
     $('a.folio').fancybox();
     $('#portfolio').mixitup();
@@ -9,11 +13,33 @@ $(function () {
     $('.navbar-nav a').click(function (e) {
         e.preventDefault();
         $(this).parent('li').toggleClass('active');
-       // $(this).parent('li').siblings('.active').removeClass('active');
-        $(this).find("a").attr("href");
-    })
+        $(this).parent('li').siblings('.active').removeClass('active');
 
+        if ($("#jump12").toggleClass('active') == true) {
+            $(this).parent('li').toggleClass('active');
+            console.log($("#jump12"));
+        }
+        else{
+                $(this).parent('li').siblings('.active').removeClass('active');
+            }
+            //console.log($("#jump12"));
+
+
+        //$(this).find("a").attr("href");
+    })
+    $('.phone').click(function (e) {
+        window.open("certs")
+    })
+    $('.jumper').click(function (e){
+        console.log("+")
+    //   if ($(this).parent('li').toggleClass('active')){
+        alert("sdfsf")
+        //window.open("sdfsf");
+      // }
+
+    })
     $('.header .navbar-nav a').smoothScroll();
+
 
     $('#jump2top').css('bottom', '-100px');
     $(window).scroll(function () {
@@ -59,7 +85,6 @@ $(function () {
     });
 
 });
-
 function scrollTo(elem) {
     $('body,html').animate({
         scrollTop: elem.offset().top

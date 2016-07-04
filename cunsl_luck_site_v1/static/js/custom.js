@@ -10,6 +10,7 @@ $(function () {
         e.preventDefault();
         $(this).parent('li').toggleClass('active');
         $(this).parent('li').siblings('.active').removeClass('active');
+        //$(this).find("a").attr("href");
     })
 
     $('.header .navbar-nav a').smoothScroll();
@@ -36,13 +37,17 @@ $(function () {
             url: 'contact_to',
             data: $('#contact_to').serialize(),
             success: function (html) {
-                if (html.success == '1') {
+                if (html.success == 1) {
                     $('#button-send').html('Send E-Mail');
+                    $('#success').css({"color":"green"});
+                    $('#success').html(html.status_text);
                     $('#success').show();
                 }
                 else {
                     $('#button-send').html('Send E-Mail');
-                    $('#error').show();
+                    $('#success').css({"color":"red"});
+                    $('#success').html(html.status_text);
+                    $('#success').show();
                 }
             },
             error: function () {

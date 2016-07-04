@@ -15,6 +15,10 @@ def post_list(request):
     return render(request, 'main_page/index.html', {"category_service": categ_service, "items": service_items})
 
 
+def certs(request):
+    return render(request, 'main_page/certs.html')
+
+
 @csrf_exempt
 def post_contact(request):
     if request.method == 'POST':

@@ -11,7 +11,11 @@ $(function () {
         $(this).parent('li').toggleClass('active');
         $(this).parent('li').siblings('.active').removeClass('active');
     })
-
+    $('.mix img').click(function (e) {
+        e.preventDefault();
+        $(this).parent('phone').toggleClass('active');
+        $(this).parent('phone').siblings('.active').removeClass('active');
+    })
     $('.header .navbar-nav a').smoothScroll();
 
     $('#jump2top').css('bottom', '-100px');
