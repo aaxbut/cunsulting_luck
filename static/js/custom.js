@@ -19,14 +19,14 @@ $(function () {
 
         //$(this).find("a").attr("href");
     })
-    $('.phone').click(function (e) {
+    /*$('.phone').click(function (e) {
         window.open("certs", "_self");
     })
     $('#jump12').click(function (e){
        //window.open("", "_self");
         history.back();
 
-    })
+    })*/
     $('.header .navbar-nav a').smoothScroll();
 
 
