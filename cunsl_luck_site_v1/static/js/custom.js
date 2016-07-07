@@ -19,9 +19,16 @@ $(function () {
 
         //$(this).find("a").attr("href");
     })
-    /*$('.phone').click(function (e) {
-        window.open("certs", "_self");
+
+    $('.phone').click(function (e) {
+                api_gallery=['/static/img/certs/certs_2.jpg','/static/img/certs/certs_2.jpg','/static/img/certs/certs_2.jpg'];
+				api_titles=['API Call Image 1','API Call Image 2','API Call Image 3'];
+				api_descriptions=['Description 1','Description 2','Description 3'];
+       $.fn.prettyPhoto();
+       $.prettyPhoto.open(api_gallery,api_titles,api_descriptions);
+        return false;
     })
+    /*
     $('#jump12').click(function (e){
        //window.open("", "_self");
         history.back();

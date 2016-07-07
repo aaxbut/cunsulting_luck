@@ -554,7 +554,7 @@ label {
   background: rgba(132,194,37, 0.8);
   color: #fff;
   color: rgba(255, 255, 255, 0.7);
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   width: 80%;
@@ -564,6 +564,7 @@ label {
   -ms-transition: opacity .3s linear;
   -moz-transition: opacity .3s linear;
   -webkit-transition: opacity .3s linear;
+  text-align: right;
   /* ...and now override with proper CSS property */
 
   transition: opacity .3s linear;
@@ -574,6 +575,7 @@ label {
   position: absolute;
   bottom: 0;
   left: 0;
+
 }
 #portfolio .mix > div .media-desc b {
   color: #fff;

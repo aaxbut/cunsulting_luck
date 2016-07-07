@@ -16,6 +16,7 @@
     <link type="text/css" href="{% static 'icons/rondo/style.css'%}" rel="stylesheet">
     <link href="{% static 'css/jquery.fancybox.css'%}" rel="stylesheet" type="text/css" />
     <link type="text/css" href="{% static 'css/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
 </head>
 <body>
     <header class="header" id="jump">
@@ -164,9 +165,11 @@
             </div>
             <div class="mixitup">
             <ul id="portfolio" class="unstyled">
-                <li class="mix phone" id="phone">
+
+                <li class="mix phone" id="phone" data-target="#myModal">
                     <div>
                         <div class="media-thumb">
+
                             <img src="{%  static 'img/portfolio/certs.png' %}" alt="">
                             <div class="media-desc">
                                 <div>
@@ -176,9 +179,13 @@
                                         Полученные нами сертификаты, всегда в актуальном состоянии.</div>
                                 </div>
                             </div>
+
+
                         </div>
+
                     </div>
                 </li>
+
                 <li class="mix tablet">
                     <div>
                         <div class="media-thumb">
@@ -209,8 +216,7 @@
                         </div>
                     </div>
                 </li>
-                <div class="section type-1" style="padding-bottom: 0">
-                </div>
+
                </ul>
             </div>
         </div>
@@ -391,6 +397,7 @@
     </footer>
     <!--Scripts-->
     <script type="text/javascript" src="{%  static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/jquery-1.10.2.min.js' %}"></script>
     <script type="text/javascript" src="{%  static 'js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{%  static 'js/jquery.smooth-scroll.min.js' %}"></script>
     <script type="text/javascript" src="{%  static 'js/jquery.mixitup.min.js' %}"></script>
@@ -398,5 +405,7 @@
     <script src="{%  static 'js/modernizr.js' %}" type="text/javascript"></script>
     <script src="{%  static 'js/jquery.fancybox.pack.js' %}" type="text/javascript"></script>
     <script type="text/javascript" src="{%  static 'js/custom.js' %}"></script>
+    <script src="{%  static 'js/jquery.prettyPhoto.js' %}" type="text/javascript" charset="utf-8"></script>
+
 </body>
 </html>

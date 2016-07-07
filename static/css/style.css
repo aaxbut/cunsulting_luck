@@ -407,6 +407,7 @@ label {
   background: #384048;
   border-color: transparent !important;
   color: #a5b3bf;
+
   -o-transition: background-color 0.3s linear;
   -ms-transition: background-color 0.3s linear;
   -moz-transition: background-color 0.3s linear;
@@ -532,12 +533,15 @@ label {
   opacity: 0;
   display: none;
   width: 33%;
-  vertical-align: top;
+  height: 45%;
+  vertical-align: bottom;
   font-size: 14px;
 }
 #portfolio .mix > div .media-thumb {
   position: relative;
   overflow: hidden;
+
+
 }
 #portfolio .mix > div .media-thumb img {
   display: block;
@@ -569,18 +573,22 @@ label {
   transition: opacity .3s linear;
 }
 #portfolio .mix > div .media-desc > div {
-  width: 100%;
-  padding: 20px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  float: none
+  width: 70%;
+  padding: 10px;
+
+  position: relative;
+  bottom: 0%;
+  left: 32%;
+  right: 40%;
+  float: none;
+  text-align: center;
 }
 #portfolio .mix > div .media-desc b {
   color: #fff;
   color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
 }
+
 #portfolio .mix > div .media-detail {
   background: #f9f9f9;
   border-top: 1px solid #eee;
