@@ -1,3 +1,7 @@
+/*$(function setProject(e){
+    $(this).parent('.phone').click(setProject(e));
+
+})*/
 $(function () {
     $('a.folio').fancybox();
     $('#portfolio').mixitup();
@@ -10,10 +14,21 @@ $(function () {
         e.preventDefault();
         $(this).parent('li').toggleClass('active');
         $(this).parent('li').siblings('.active').removeClass('active');
+
+
+
         //$(this).find("a").attr("href");
     })
+    /*$('.phone').click(function (e) {
+        window.open("certs", "_self");
+    })
+    $('#jump12').click(function (e){
+       //window.open("", "_self");
+        history.back();
 
+    })*/
     $('.header .navbar-nav a').smoothScroll();
+
 
     $('#jump2top').css('bottom', '-100px');
     $(window).scroll(function () {
@@ -59,7 +74,6 @@ $(function () {
     });
 
 });
-
 function scrollTo(elem) {
     $('body,html').animate({
         scrollTop: elem.offset().top
