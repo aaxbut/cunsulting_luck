@@ -28,6 +28,11 @@ $(function () {
        $.prettyPhoto.open(api_gallery,api_titles,api_descriptions);
         return false;
     })
+
+    $('.').click(function (e) {
+        alert("");
+        return false;
+    })
     /*
     $('#jump12').click(function (e){
        //window.open("", "_self");

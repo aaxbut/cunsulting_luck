@@ -28,6 +28,11 @@ $(function () {
        $.prettyPhoto.open(api_gallery,api_titles,api_descriptions);
         return false;
     })
+
+    $('.desktop').click(function (e) {
+        $.("#costserv").modal("show");
+        return false;
+    })
     /*
     $('#jump12').click(function (e){
        //window.open("", "_self");

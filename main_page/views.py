@@ -24,6 +24,7 @@ def post_contact(request):
     if request.method == 'POST':
         try:
             # попытка проверки и записи формы в модель
+
             print(request.POST)  # тут разбираемся пу стой queryset приходит
             pickup_records = valid_feedback(email_msg=request.POST['email'], subj_message=request.POST['subject'],
                                             message_msg=request.POST['message'], name_sender=request.POST['name'],
@@ -36,5 +37,5 @@ def post_contact(request):
     return render(request, 'main_page/index.html')
 
 
-def validation_feedbak(**kwargs):
-    return True
+def cost_service(request):
+    return render(request, 'main_page/costserv.html')
