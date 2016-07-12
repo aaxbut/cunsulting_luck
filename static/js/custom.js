@@ -29,10 +29,27 @@ $(function () {
         return false;
     })
 
-    $('.desktop').click(function (e) {
-        $.("#costserv").modal("show");
-        return false;
-    })
+
+    $(".desktop").click(function(e) { // for each edit contact url
+        e.preventDefault(); // prevent navigation
+        var url = $(this).data("form"); // get the contact form url
+        //alert(url);
+        $("#cost_of_service").load(url, function() { // load the url into the modal
+            $(this).modal('show'); // display the modal on url load
+        });
+        return false; // prevent the click propagation
+    });
+
+       //
+        //$('#myModal').modal('show');
+       /* $(this).data('load-from');
+        $("#cost_of_service").modal('show');
+        /*return false;*/
+         // выключaем стaндaртную рoль элементa
+		/*var $place = $( "#cost_of_service" );
+        $place.load($place.data('load-from') );*/
+
+
     /*
     $('#jump12').click(function (e){
        //window.open("", "_self");

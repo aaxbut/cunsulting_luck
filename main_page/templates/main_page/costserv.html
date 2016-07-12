@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="/cost_service/" method="get">
-        <input type="text" name="q">
-        <input type="submit" value="Search">
-    </form>
-</body>
-</html>
+<div class="modal hide" id="cost_of_service">
+<form class="well" method="post" action="/cost_service/">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Editing Contact</h3>
+  </div>
+  <div class="modal-body">
+       {% csrf_token %}
+
+  </div>
+  <div class="modal-footer">
+       <input class="btn btn-primary" type="submit" value="Save" />
+       <input name="cancel" class="btn" type="submit" value="Cancel"/>
+  </div>
+</form>
+</div>

@@ -36,6 +36,7 @@ def post_contact(request):
         return render(request, 'main_page/index.html')
     return render(request, 'main_page/index.html')
 
-
+@csrf_exempt
 def cost_service(request):
+    print(request.POST)
     return render(request, 'main_page/costserv.html')

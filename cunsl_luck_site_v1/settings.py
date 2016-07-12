@@ -130,8 +130,8 @@ STATICFILES_DIRS = (
 )
 #FAVICON_PATH = STATIC_URL + 'icons/favicon.png'
 
-#TEMPLATES_DIR = (os.path.join(BASE_DIR, '/templates/'),
-#)
+TEMPLATES_DIR = (os.path.join(BASE_DIR, '/templates/'),
+)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
