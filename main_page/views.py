@@ -39,4 +39,6 @@ def post_contact(request):
 @csrf_exempt
 def cost_service(request):
     print(request.POST)
-    return render(request, 'main_page/costserv.html')
+    categ_service = ServicesMain.objects.filter(service_is_deploy=True).order_by('service_display_serial_item')
+    service_items = ServiceItems.objects.all().order_by('service_main')
+    return render(request, 'main_page/costserv.html',{"category_service": categ_service, "items": service_items})

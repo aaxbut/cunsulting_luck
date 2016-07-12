@@ -3,6 +3,7 @@
 
 })*/
 $(function () {
+
     $('a.folio').fancybox();
     $('#portfolio').mixitup();
 
@@ -16,29 +17,50 @@ $(function () {
         $(this).parent('li').siblings('.active').removeClass('active');
 
 
-
         //$(this).find("a").attr("href");
     })
 
     $('.phone').click(function (e) {
-                api_gallery=['/static/img/certs/certs_2.jpg','/static/img/certs/certs_2.jpg','/static/img/certs/certs_2.jpg'];
-				api_titles=['API Call Image 1','API Call Image 2','API Call Image 3'];
-				api_descriptions=['Description 1','Description 2','Description 3'];
-       $.fn.prettyPhoto();
-       $.prettyPhoto.open(api_gallery,api_titles,api_descriptions);
+        api_gallery = ['/static/img/certs/certs_2.jpg', '/static/img/certs/certs_2.jpg', '/static/img/certs/certs_2.jpg'];
+        api_titles = ['API Call Image 1', 'API Call Image 2', 'API Call Image 3'];
+        api_descriptions = ['Description 1', 'Description 2', 'Description 3'];
+        $.fn.prettyPhoto();
+        $.prettyPhoto.open(api_gallery, api_titles, api_descriptions);
         return false;
     })
 
 
-    $(".desktop").click(function(e) { // for each edit contact url
+    $(".desktop").click(function (e) { // for each edit contact url
         e.preventDefault(); // prevent navigation
-        var url = $(this).data("form"); // get the contact form url
-        //alert(url);
+        var $popup = $('#cost_of_service');
+        var $link = $(this);
+        var popup_url = $link.data("form");
+        var popup_title = $link.data("form");
+        if (!popup_url) {
+
+            return true;
+        }
+       // $('.modal-title', $popup).html(popup_title);
+        $('.modal-body', $popup).load(popup_url, function () {
+
+            $popup.on('shown.bs.modal', function () {
+                //что то делаем в форме
+            }).modal("show");
+        })
+        $('.close', $popup).click(function () {
+
+
+        })
+
+    })
+
+
+      /*  var url = $(this).data("form"); // get the contact form url
         $("#cost_of_service").load(url, function() { // load the url into the modal
             $(this).modal('show'); // display the modal on url load
         });
-        return false; // prevent the click propagation
-    });
+        return false; // prevent the click propagation*/
+
 
        //
         //$('#myModal').modal('show');
