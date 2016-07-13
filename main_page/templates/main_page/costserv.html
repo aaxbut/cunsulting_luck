@@ -1,33 +1,39 @@
-{% load staticfiles %}
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
-    <link type="text/css" href="{% static 'css/style.css'%}" rel="stylesheet">
-
-</head>
-<form action="" method="post">
-<div class="modal" id="cost_of_service">
-    <div class="modal-dialog">
+<form action="" method="post">{% csrf_token %}
+<div class="modal" id="cost_of_service" role="dialog">
+    <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h3>Конструктор стоимости</h3>
             </div>
                 <h4 class="modal-title"></h4>
-            {%  for service in category_service %}
-                <div class="panel-heading">
-                                <h2 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#{{ service.service_href }}">
-                                        {{ service.service_title }}<i class="icon-minus"></i><i class="icon-plus"></i></a>
-                                </h2>
-                            </div>
-            {% endfor %}
-            <div class="modal-body">
-             {% csrf_token %}
 
-            </div>
+
+
+                    {%  for service in category_service %}
+                        <div class="panel-group" id="accordion2">
+                            <div class="panel-heading" id="costserv_acc">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#{{ service.service_href }}1">
+                                        {{ service.service_title }} <i class="icon-minus"></i><i class="icon-plus"></i></a>
+                                </h3>
+                                <div id="{{ service.service_href }}1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p style="text-align: justify;"></p>
+                                    <ul class="icons-ul">
+                                        {%  for item_name in items %}
+
+                                        <li><input class="col" type="checkbox"> {{ item_name.service_item_text }}</li>
+
+                                      {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
             <div class="modal-footer">
                 <input class="btn btn-primary" type="submit" value="Save" />
                 <input name="cancel" class="btn" type="submit" value="Cancel"/>
@@ -37,5 +43,6 @@
 
 
     </div>
+
     </div>
 </form>

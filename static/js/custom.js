@@ -31,29 +31,17 @@ $(function () {
 
 
     $(".desktop").click(function (e) { // for each edit contact url
-        e.preventDefault(); // prevent navigation
-        var $popup = $('#cost_of_service');
-        var $link = $(this);
-        var popup_url = $link.data("form");
-        var popup_title = $link.data("form");
-        if (!popup_url) {
+        e.preventDefault();
+        // for each edit contact url
+            //var url = $(this).data("form"); // get the contact form url
+            //$("#cost_of_service").load(url, function () { // load the url into the modal
 
-            return true;
-        }
-       // $('.modal-title', $popup).html(popup_title);
-        $('.modal-body', $popup).load(popup_url, function () {
-
-            $popup.on('shown.bs.modal', function () {
-                //что то делаем в форме
-            }).modal("show");
-        })
-        $('.close', $popup).click(function () {
-
-
-        })
+        $("#cost_of_service").modal('show'); // display the modal on url load
 
     })
-
+     $('#costserv_acc').collapse({
+          toggle: false
+        })
 
       /*  var url = $(this).data("form"); // get the contact form url
         $("#cost_of_service").load(url, function() { // load the url into the modal
