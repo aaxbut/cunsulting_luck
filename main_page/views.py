@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.core.mail import BadHeaderError
 import json
-from .validate_feedback import valid_feedback
+from .validate_feedback import valid_feedback, create_service_form_date
 # Create your views here.
 from django import forms
 
@@ -27,7 +27,7 @@ def post_contact(request):
         try:
             # попытка проверки и записи формы в модель
 
-            print(request.POST)  # тут разбираемся пу стой queryset приходит
+            #print(request.POST)  # тут разбираемся пу стой queryset приходит
             pickup_records = valid_feedback(email_msg=request.POST['email'], subj_message=request.POST['subject'],
                                             message_msg=request.POST['message'], name_sender=request.POST['name'],
                                             csrf_token=request.POST['csrfmiddlewaretoken'])
@@ -38,9 +38,10 @@ def post_contact(request):
         return render(request, 'main_page/index.html', {"category_service": categ_service, "items": service_items})
     return render(request, 'main_page/index.html', {"category_service": categ_service, "items": service_items})
 
+
 @csrf_exempt
 def cost_service(request):
-    print(request.POST)
+    create_service_form_date(request.POST)
     categ_service = ServicesMain.objects.filter(service_is_deploy=True).order_by('service_display_serial_item')
     service_items = ServiceItems.objects.order_by('service_main')
 

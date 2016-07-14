@@ -38,6 +38,7 @@ $(function () {
         $('input:checkbox').removeAttr('checked');
         $("#cost_of_service").modal('show'); // display the modal on url load
 
+
     })
      $('#costserv_acc').collapse({
           toggle: false
@@ -50,7 +51,7 @@ $(function () {
         $.ajax({
             type: 'POST',
             url: 'costservice',
-            data: $('#costservice').serialize(),
+            data: $('#cost_services').serialize(),
             success: function (html) {
                 if (html.success == 1) {
                     $('#btn-cost-of-service').html('Send E-Mail');

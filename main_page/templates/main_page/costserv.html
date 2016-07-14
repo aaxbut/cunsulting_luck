@@ -1,4 +1,4 @@
-<form action="" method="post" id="cost_services">{% csrf_token %}
+<form action="costservice" method="post" id="cost_services">{% csrf_token %}
 <div class="modal" id="cost_of_service" role="dialog">
     <div class="modal-dialog ">
         <div class="modal-content">
@@ -7,9 +7,6 @@
                 <h3>Конструктор стоимости</h3>
             </div>
                 <h4 class="modal-title"></h4>
-
-
-
                     {%  for service in category_service %}
                         <div class="panel-group" id="accordion2">
                             <div class="panel-heading" id="costserv_acc">
@@ -23,7 +20,7 @@
                                     <ul class="icons-ul">
                                         {%  for item_name in items %}
                                             {% if item_name.service_main.pk == service.pk %}
-                                                <li><input id="check_service_cost" name="{{ item_name.pk }}" value="{{ item_name.pk }}+value" class="col" type="checkbox" checked=""> {{ item_name.service_item_text }}</li>
+                                                <li><input id="check_service_cost" name="{{ item_name.pk }}" value="{{ item_name.pk }}" class="col" type="checkbox" checked=""> {{ item_name.service_item_text }}</li>
                                             {% endif %}
                                       {% endfor %}
                                     </ul>
@@ -37,7 +34,7 @@
             <div class="modal-footer">
                 <div class="input-group">
                     <span class="input-group-addon">@</span>
-                    <input type="text" class="form-control" placeholder="адрес электронной почты">
+                    <input type="text" class="form-control" placeholder="адрес электронной почты" id="email_form_calc" name="email_form_calc">
                 </div>
                 <input class="btn btn-block btn-success" type="submit" value="Запросить стоимость" id="btn-cost-of-service"/>
                 <div id="success1">

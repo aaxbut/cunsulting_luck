@@ -32,3 +32,16 @@ def valid_feedback(**kwargs):
         #   email_msg, subj_message, message_msg, name_sender, csrf_token)
     print(res)
     return res
+
+
+def create_service_form_date(*args):
+    result = {}
+    print('что за 0')
+    print(args)
+    for x1, y1 in enumerate(args):
+        print(x1, y1)
+        result = (x1, y1)
+
+
+
+    return result
