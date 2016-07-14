@@ -878,6 +878,20 @@ label {
 	color: red;
 	display:none;
 }
+#success1{
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	color: green;
+	display:none;
+}
+#error1{
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	color: red;
+	display:none;
+}
 /*модальная форма формирования стоимости*/
 #costserv {
 	width: 300px;

@@ -118,7 +118,9 @@
                                     <p style="text-align: justify;"> {{ service.service_text }}</p>
                                     <ul class="icons-ul">
                                         {%  for item_name in items %}
-                                        <li><i class="icon-li icon-ok"></i>{{ item_name.service_item_text }}</li>
+                                            {% if item_name.service_main.pk == service.pk %}
+                                            <li><i class="icon-li icon-ok"></i>{{ item_name.service_item_text }}</li>
+                                            {% endif %}
                                         {% endfor %}
                                     </ul>
                                 </div>

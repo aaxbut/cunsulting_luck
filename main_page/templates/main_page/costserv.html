@@ -1,4 +1,4 @@
-<form action="" method="post">{% csrf_token %}
+<form action="" method="post" id="cost_services">{% csrf_token %}
 <div class="modal" id="cost_of_service" role="dialog">
     <div class="modal-dialog ">
         <div class="modal-content">
@@ -22,9 +22,9 @@
                                     <p style="text-align: justify;"></p>
                                     <ul class="icons-ul">
                                         {%  for item_name in items %}
-
-                                        <li><input class="col" type="checkbox"> {{ item_name.service_item_text }}</li>
-
+                                            {% if item_name.service_main.pk == service.pk %}
+                                                <li><input id="check_service_cost" name="{{ item_name.pk }}" value="{{ item_name.pk }}+value" class="col" type="checkbox" checked=""> {{ item_name.service_item_text }}</li>
+                                            {% endif %}
                                       {% endfor %}
                                     </ul>
                                 </div>
@@ -35,8 +35,15 @@
                     {% endfor %}
 
             <div class="modal-footer">
-                <input class="btn btn-primary" type="submit" value="Save" />
-                <input name="cancel" class="btn" type="submit" value="Cancel"/>
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" placeholder="адрес электронной почты">
+                </div>
+                <input class="btn btn-block btn-success" type="submit" value="Запросить стоимость" id="btn-cost-of-service"/>
+                <div id="success1">
+                        Ваше сообщение отправлено</div>
+                <div id="error1">
+                        Ваше сообщение не отправлено</div>
         </div>
         </div>
 

@@ -11,7 +11,7 @@ from django import forms
 
 def post_list(request):
     categ_service = ServicesMain.objects.filter(service_is_deploy=True).order_by('service_display_serial_item')
-    service_items = ServiceItems.objects.all().order_by('service_main')
+    service_items = ServiceItems.objects.order_by('service_main')
     return render(request, 'main_page/index.html', {"category_service": categ_service, "items": service_items})
 
 
@@ -21,6 +21,8 @@ def certs(request):
 
 @csrf_exempt
 def post_contact(request):
+    categ_service = ServicesMain.objects.filter(service_is_deploy=True).order_by('service_display_serial_item')
+    service_items = ServiceItems.objects.order_by('service_main')
     if request.method == 'POST':
         try:
             # попытка проверки и записи формы в модель
@@ -33,12 +35,13 @@ def post_contact(request):
         except BadHeaderError:  # Защита от уязвимости
             return HttpResponse('Invalid header found')
         # #Переходим на другую страницу, если сообщение отправлено
-        return render(request, 'main_page/index.html')
-    return render(request, 'main_page/index.html')
+        return render(request, 'main_page/index.html', {"category_service": categ_service, "items": service_items})
+    return render(request, 'main_page/index.html', {"category_service": categ_service, "items": service_items})
 
 @csrf_exempt
 def cost_service(request):
     print(request.POST)
     categ_service = ServicesMain.objects.filter(service_is_deploy=True).order_by('service_display_serial_item')
-    service_items = ServiceItems.objects.all().order_by('service_main')
-    return render(request, 'main_page/costserv.html',{"category_service": categ_service, "items": service_items})
+    service_items = ServiceItems.objects.order_by('service_main')
+
+    return render(request, 'main_page/costserv.html', {"category_service": categ_service, "items": service_items})
