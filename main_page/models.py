@@ -55,6 +55,7 @@ class ServiceItems(models.Model):
        # return list_display
         #' {0} | состоит в категории | {1}'.format(self.service_item_text, self.service_main.service_title)
 
+
 class Contacts(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     subject = models.CharField(max_length=250)
@@ -65,3 +66,29 @@ class Contacts(models.Model):
     def publish(self):
         self.created_date = timezone.now()
         self.save()
+
+
+class ServiceCart(models.Model):
+    # Дата создание заказа
+    created_date = models.DateTimeField(default=timezone.now)
+    # адрес электронной почты заказчика
+    mail_contakt = models.EmailField()
+    # указанные услуги в заказе
+    service_in_cart = models.ManyToManyField(ServiceItems, related_name="servincart")
+    # общая стоимость заказа
+    total_cost_service = models.FloatField(default=0)
+
+    def publish(self):
+        self.created_date = timezone.now()
+        self.save()
+
+
+#class ServiceCartItems(models.Model):
+#    created_date = models.DateTimeField(default=timezone.now)
+#    service_in_cart = models.ForeignKey(ServiceItems)
+#    service_cart_main = models.ForeignKey(ServiceCart)
+
+    #def publish(self):
+    #    self.created_date = timezone.now()
+    #    self.save()
+
