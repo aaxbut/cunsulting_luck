@@ -1,6 +1,8 @@
 import re
+from .models import ServiceCart, ServiceItems
+from django.utils import timezone
 from email.utils import parseaddr
-
+import pickle
 
 def valid_feedback(**kwargs):
     res = {}
@@ -35,13 +37,27 @@ def valid_feedback(**kwargs):
 
 
 def create_service_form_date(*args):
-    result = {}
-    print('что за 0')
-    print(args)
-    for x1, y1 in enumerate(args):
-        print(x1, y1)
-        result = (x1, y1)
+    items_in_cart = ServiceCart()
+    items = ServiceItems.objects
+    result = dict(args[0])
+    # print(result)
+    email_cart = result.pop('email_form_calc')
+    csrf_cart = result.pop('csrfmiddlewaretoken')
+    # print(result, "e-mail:", email_cart, "csrf : ", csrf_cart)
+    # print("осталась только таб часть", result)
+    # items_in_cart.
+    items_in_cart.created_date = timezone.now()
+    items_in_cart.mail_contakt = email_cart[0]
+    # result = list(result)
+    total_cost_in_cart = 0
+    #servicecart.objects
+    items_in_cart.save()
+    for x in result:
 
-
-
+        items_in_cart.service_in_cart.add(items.get(id=x).pk)
+        total_cost_in_cart = total_cost_in_cart + items.get(id=x).service_cost
+        print(x)
+    items_in_cart.total_cost_service = float(total_cost_in_cart)
+    print("Общая стоимость : ", total_cost_in_cart)
+    items_in_cart.save()
     return result

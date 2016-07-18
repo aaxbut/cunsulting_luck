@@ -1,3 +1,4 @@
+# coding=utf-8
 from django.db import models
 from django.utils import timezone
 from django.utils.html import format_html
@@ -49,11 +50,11 @@ class ServiceItems(models.Model):
         self.save()
 
     def __str__(self):
-       #list_display =(self.service_item_text, self.service_main.service_title,)
+        # list_display =(self.service_item_text, self.service_main.service_title,)
         return '{0}|| {1}'.format(self.service_item_text, self.service_main.service_title)
 
-       # return list_display
-        #' {0} | состоит в категории | {1}'.format(self.service_item_text, self.service_main.service_title)
+        # return list_display
+        # ' {0} | состоит в категории | {1}'.format(self.service_item_text, self.service_main.service_title)
 
 
 class Contacts(models.Model):
@@ -82,13 +83,11 @@ class ServiceCart(models.Model):
         self.created_date = timezone.now()
         self.save()
 
+    # class ServiceCartItems(models.Model):
+    #    created_date = models.DateTimeField(default=timezone.now)
+    #    service_in_cart = models.ForeignKey(ServiceItems)
+    #    service_cart_main = models.ForeignKey(ServiceCart)
 
-#class ServiceCartItems(models.Model):
-#    created_date = models.DateTimeField(default=timezone.now)
-#    service_in_cart = models.ForeignKey(ServiceItems)
-#    service_cart_main = models.ForeignKey(ServiceCart)
-
-    #def publish(self):
+    # def publish(self):
     #    self.created_date = timezone.now()
     #    self.save()
-

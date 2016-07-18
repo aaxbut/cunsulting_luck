@@ -122,6 +122,24 @@
       <foreign-key name="#FAKE_main_page_post_1" columns="author_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <index name="main_page_post_4f331e2f" unique="true" columns="author_id"/>
     </table>
+    <table name="main_page_servicecart" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="created_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="mail_contakt" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="total_cost_service" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="main_page_servicecart_service_in_cart" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="servicecart_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="serviceitems_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_main_page_servicecart_service_in_cart_1" columns="serviceitems_id" ref-table="main_page_serviceitems" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_main_page_servicecart_service_in_cart_2" columns="servicecart_id" ref-table="main_page_servicecart" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="main_page_servicecart_service_in_cart_66eac468" unique="true" columns="serviceitems_id"/>
+      <index name="main_page_servicecart_service_in_cart_254c56c1" unique="true" columns="servicecart_id"/>
+      <index name="main_page_servicecart_service_in_cart_servicecart_id_8676de81_uniq" unique="true" columns="servicecart_id,serviceitems_id"/>
+    </table>
     <table name="main_page_serviceitems" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="service_item_text" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
