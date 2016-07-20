@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'contact_to', views.post_contact, name='contact_to'),
     url(r'certs', views.certs, name='certifucates'),
     url(r'costservice', views.cost_service, name='cost_service'),
+    url(r'blogitems', views.blog_items, name='blogitems'),
 ]

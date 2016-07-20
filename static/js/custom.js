@@ -29,6 +29,17 @@ $(function () {
         return false;
     })
 
+    $(".tablet").click(function (e){
+        e.preventDefault();
+        window.open("blogitems");
+    })
+
+    $(".in_back").click(function (e){
+        e.preventDefault();
+        window.back();
+    })
+
+
 
     $(".desktop").click(function (e) { // for each edit contact url
         e.preventDefault();
@@ -53,7 +64,9 @@ $(function () {
             url: 'costservice',
             data: $('#cost_services').serialize(),
             success: function (html) {
-                if (html.success == 1) {
+                $('#success1').hide();
+                $('#error1').hide();
+                if (html.success1 == 1) {
                     $('#btn-cost-of-service').html('Send E-Mail');
                     $('#success1').css({"color":"green"});
                     $('#success1').html(html.status_text);
@@ -62,9 +75,9 @@ $(function () {
                 }
                 else {
                     $('#btn-cost-of-service').html('Send E-Mail');
-                    $('#success1').css({"color":"red"});
-                    $('#success1').html(html.status_text);
-                    $('#success1').show();
+                    $('#error1').css({"color":"red"});
+                    $('#error1').html(html.status_text);
+                    $('#error1').show();
                     //$("#cost_of_service").modal('hide'); убрать модальное окно
 
                 }
@@ -124,6 +137,8 @@ $(function () {
             url: 'contact_to',
             data: $('#contact_to').serialize(),
             success: function (html) {
+                $('#success').hide();
+                $('#error').hide();
                 if (html.success == 1) {
                     $('#button-send').html('Send E-Mail');
                     $('#success').css({"color":"green"});

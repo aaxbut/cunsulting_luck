@@ -1,5 +1,5 @@
 import re
-from .models import ServiceCart, ServiceItems
+from .models import ServiceCart, ServiceItems, Contacts
 from django.utils import timezone
 from email.utils import parseaddr
 import pickle
@@ -32,6 +32,26 @@ def valid_feedback(**kwargs):
 
         #   raise ValueError('Bad Syntax')
         #   email_msg, subj_message, message_msg, name_sender, csrf_token)
+    if res['success'] == 1:
+        feedback_items = Contacts()
+        feedback_items.created_date = timezone.now()
+        feedback_items.mail_contact = kwargs.get('email_msg')
+
+        #email_msg=request.POST['email'], subj_message=request.POST['subject'],
+        #                                    message_msg=request.POST['message'], name_sender=request.POST['name'],
+        #                                    csrf_token=request.POST['csrfmiddlewaretoken'])
+
+        feedback_items.name_from_contact = kwargs.get('name_sender')
+        feedback_items.message = kwargs.get('message_msg')
+        feedback_items.subject = kwargs.get('subj_message')
+        feedback_items.save()
+
+
+        print('сохраняем данный для отправки почта')
+
+    else:
+        pass
+
     print(res)
     return res
 
@@ -51,13 +71,21 @@ def create_service_form_date(*args):
     # result = list(result)
     total_cost_in_cart = 0
     #servicecart.objects
-    items_in_cart.save()
-    for x in result:
+    match = re.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', email_cart[0])
+    if match is None:
+        # print('Bad Syntax')
+        res = {"success1": 0}
+    else:
+        res = {"success1": 1}
 
-        items_in_cart.service_in_cart.add(items.get(id=x).pk)
-        total_cost_in_cart = total_cost_in_cart + items.get(id=x).service_cost
-        print(x)
-    items_in_cart.total_cost_service = float(total_cost_in_cart)
-    print("Общая стоимость : ", total_cost_in_cart)
-    items_in_cart.save()
-    return result
+        items_in_cart.save()
+        for x in result:
+
+            items_in_cart.service_in_cart.add(items.get(id=x).pk)
+            total_cost_in_cart = total_cost_in_cart + items.get(id=x).service_cost
+            print(x)
+        items_in_cart.total_cost_service = float(total_cost_in_cart)
+        print("Общая стоимость : ", total_cost_in_cart, res)
+        items_in_cart.save()
+    print (res)
+    return res

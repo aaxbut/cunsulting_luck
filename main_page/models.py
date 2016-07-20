@@ -69,6 +69,18 @@ class Contacts(models.Model):
         self.save()
 
 
+class BlogsItems(models.Model):
+    author = models.ForeignKey('auth.User')
+    blog_created_date = models.DateTimeField(default=timezone.now)
+    blog_subject = models.CharField(max_length=250)
+    blog_message = models.TextField()
+    blog_is_deploy = models.BooleanField(default=False)
+
+    def publish(self):
+        self.blog_created_date = timezone.now()
+        self.save()
+
+
 class ServiceCart(models.Model):
     # Дата создание заказа
     created_date = models.DateTimeField(default=timezone.now)

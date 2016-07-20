@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Post, ServiceItems, ServicesMain, Contacts, ServiceCart\
-    #, ServiceCartItems
+from .models import Post, ServiceItems, ServicesMain, Contacts, ServiceCart, BlogsItems
+#, ServiceCartItems
 
 admin.site.register(Post)
 
@@ -23,6 +23,9 @@ class ServiceCartViewAdmin(admin.ModelAdmin):
     filter_horizontal = ('service_in_cart',)
 
 
+class BlogItemsAdmin(admin.ModelAdmin):
+    list_display = ('blog_is_deploy', 'blog_subject', 'blog_created_date', 'author')
+
 # определяем представление табличной части заказа
 #class ServiceCartItemsViewAdmin(admin.ModelAdmin):
 #    list_display = ('pk', 'mail_contakt', 'created_date')
@@ -31,4 +34,5 @@ admin.site.register(ServiceItems, ServicesItemsAdmin)
 admin.site.register(ServicesMain, ServiceMainAdmin)
 admin.site.register(Contacts, ContactViewAdmin)
 admin.site.register(ServiceCart, ServiceCartViewAdmin)
+admin.site.register(BlogsItems, BlogItemsAdmin)
 #admin.site.register(ServiceCartItems, ServiceCartItemsViewAdmin)

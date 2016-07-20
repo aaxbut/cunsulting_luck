@@ -29,32 +29,60 @@ $(function () {
         return false;
     })
 
-
-    $(".desktop").click(function (e) { // for each edit contact url
-        e.preventDefault(); // prevent navigation
-        var $popup = $('#cost_of_service');
-        var $link = $(this);
-        var popup_url = $link.data("form");
-        var popup_title = $link.data("form");
-        if (!popup_url) {
-
-            return true;
-        }
-       // $('.modal-title', $popup).html(popup_title);
-        $('.modal-body', $popup).load(popup_url, function () {
-
-            $popup.on('shown.bs.modal', function () {
-                //что то делаем в форме
-            }).modal("show");
-        })
-        $('.close', $popup).click(function () {
-
-
-        })
-
+    $(".table").click(function (e){
+        e.preventDefault()
+        window.open("blogitems")
     })
 
 
+    $(".desktop").click(function (e) { // for each edit contact url
+        e.preventDefault();
+        // for each edit contact url
+            //var url = $(this).data("form"); // get the contact form url
+            //$("#cost_of_service").load(url, function () { // load the url into the modal
+        $('input:checkbox').removeAttr('checked');
+        $("#cost_of_service").modal('show'); // display the modal on url load
+
+
+    })
+     $('#costserv_acc').collapse({
+          toggle: false
+        })
+    //обработка формы запроса стоимости
+    $('#btn-cost-of-service').click(function (event) {
+        $('#btn-cost-of-service').html('формируем ответ');
+        event.preventDefault();
+
+        $.ajax({
+            type: 'POST',
+            url: 'costservice',
+            data: $('#cost_services').serialize(),
+            success: function (html) {
+                $('#success1').hide();
+                $('#error1').hide();
+                if (html.success1 == 1) {
+                    $('#btn-cost-of-service').html('Send E-Mail');
+                    $('#success1').css({"color":"green"});
+                    $('#success1').html(html.status_text);
+
+                    $('#success1').show();
+                }
+                else {
+                    $('#btn-cost-of-service').html('Send E-Mail');
+                    $('#error1').css({"color":"red"});
+                    $('#error1').html(html.status_text);
+                    $('#error1').show();
+                    //$("#cost_of_service").modal('hide'); убрать модальное окно
+
+                }
+            },
+            error: function () {
+                $('#btn-cost-of-service').html('Send E-Mail');
+                $('#error1').show();
+            }
+        });
+
+    });
       /*  var url = $(this).data("form"); // get the contact form url
         $("#cost_of_service").load(url, function() { // load the url into the modal
             $(this).modal('show'); // display the modal on url load
@@ -103,6 +131,8 @@ $(function () {
             url: 'contact_to',
             data: $('#contact_to').serialize(),
             success: function (html) {
+                $('#success').hide();
+                $('#error').hide();
                 if (html.success == 1) {
                     $('#button-send').html('Send E-Mail');
                     $('#success').css({"color":"green"});
