@@ -23,16 +23,18 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".showmain">
                         <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-                        <span class="icon-bar"></span><span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
                         <img src="{%  static 'img/logo.png' %}" alt="" /></a>
                 </div>
                 <div class="collapse navbar-collapse hidden-xs">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="in_back">На главную</a></li>
+                        <li><a href="to_home" class="to_home">Home</a></li>
                         <li class="active"><a href="#jump1">Блог</a></li>
                         <li><a href="#jump6">Contact Us</a></li>
                     </ul>
@@ -40,11 +42,34 @@
             </div>
         </nav>
     </header>
-    <div class="jumper" id="jump0">
+
+    <div id="jump1" class="jumper">
     </div>
-      <div id="jump1" class="jumper">
+       <div class="section type-1" style="padding-bottom: 0">
+        <div class="container">
+            <div class="section-headlines">
+                <h3>
+                    Будем стараться освещать Вас самыми важными знаниями собранными с просторов учета</h3>
+            </div>
+            {%  for blog_item in blog_items_ord %}
+                <div class="row">
+                    <div class="col-lg-8 features">
+                        <h4>
+                            {{ blog_item.blog_subject }}
+                        </h4>
+                        <h5>
+                            {{ blog_item.blog_message }}
+                        </h5>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+
+
     </div>
-    <div class="section type-2">
+    <div class="section type-1 section-contact">
         <div class="container">
         </div>
     </div>
@@ -109,7 +134,7 @@
             </div>
 
         </div>
-        <br>
+         <br>
         <br>
         <br>
         <br>
@@ -128,6 +153,7 @@
         </div>
     </footer>
     <!--Scripts-->
+
     <script type="text/javascript" src="{%  static 'js/jquery-1.10.2.min.js' %}"></script>
     <script type="text/javascript" src="{%  static 'js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{%  static 'js/jquery.smooth-scroll.min.js' %}"></script>
@@ -137,9 +163,5 @@
     <script src="{%  static 'js/jquery.fancybox.pack.js' %}" type="text/javascript"></script>
     <script type="text/javascript" src="{%  static 'js/custom.js' %}"></script>
     <script src="{%  static 'js/jquery.prettyPhoto.js' %}" type="text/javascript" charset="utf-8"></script>
-
-{% include "main_page/costserv.html" %}
 </body>
-<div class="modal hide" id="cost_of_service">
-</div>
 </html>

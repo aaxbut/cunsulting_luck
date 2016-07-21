@@ -61,4 +61,4 @@ def cost_service(request):
 @csrf_exempt
 def blog_items(request):
     blog_items_ord = BlogsItems.objects.filter(blog_is_deploy=True).order_by('blog_created_date')
-    return render(request, 'main_page/blogsItems.html', {"blog_items_ord": blog_items})
+    return render(request, 'main_page/blogsItems.html', {"blog_items_ord": blog_items_ord})

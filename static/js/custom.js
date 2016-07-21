@@ -34,9 +34,14 @@ $(function () {
         window.open("blogitems");
     })
 
-    $(".in_back").click(function (e){
-        e.preventDefault();
-        window.back();
+    $(".to_home").click(function (e){
+       // e.preventDefault();
+
+        var href = e.target.getAttribute('href');
+        window.open(href,"_self");
+        //alert( href );
+       // return true;
+     //   window.back();
     })
 
 
@@ -70,15 +75,15 @@ $(function () {
                     $('#btn-cost-of-service').html('Send E-Mail');
                     $('#success1').css({"color":"green"});
                     $('#success1').html(html.status_text);
-
                     $('#success1').show();
+                    $("#cost_of_service").modal('hide'); //убрать модальное окно
                 }
                 else {
                     $('#btn-cost-of-service').html('Send E-Mail');
                     $('#error1').css({"color":"red"});
                     $('#error1').html(html.status_text);
                     $('#error1').show();
-                    //$("#cost_of_service").modal('hide'); убрать модальное окно
+                    $("#cost_of_service").modal('hide'); //убрать модальное окно
 
                 }
             },
