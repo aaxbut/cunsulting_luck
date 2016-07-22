@@ -42,24 +42,18 @@
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
-                <!--<div class="collapse navbar-responsive-collapse">
+                <div class="collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#jump0" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                             Вверх</a></li>
                         <li><a href="#jump1" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                             Услуги</a></li>
-                        <li><a href="#jump2" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                            Новости</a></li>
-                        <li><a href="#jump3" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                            Pricing</a></li>
-                        <li><a href="#jump4" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                            Team</a></li>
                         <li><a href="#jump5" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                             О нас говорят</a></li>
                         <li><a href="#jump6" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                             Контакты</a></li>
                     </ul>
-                </div>-->
+                </div>
                 <!-- /.navbar-responsive-collapse -->
             </div>
         </nav>
@@ -100,9 +94,13 @@
                     предприятий от Нашей компании - гарантия качественного выполнения услуг</p>
                 </div>
             </div>
-            {%  for service in category_service %}
+
+
+
             <div class="row">
+{%  for service in category_service %}
                 <div class="col-lg-6 features">
+
                     <div class="panel-group" id="accordion">
                         <!--режем тихонечко добавляем сервисные услуги-->
 
@@ -127,17 +125,16 @@
                             </div>
                         </div>
 
-
-                    </div>
-                    <div class="visible-xs visible-sm">
-                        <br class="gap-30" />
-                        <hr class="gap-divider" />
-                        <br class="gap-30" />
                     </div>
                 </div>
-            {% endfor %}
+{% endfor %}
             </div>
+
             <br>
+        </div>
+    </div>
+        <div class="section type-2">
+        <div class="container">
              <div class="section-headlines">
                 <h4>
                     Выбирая Нашу компанию Вы</h4>

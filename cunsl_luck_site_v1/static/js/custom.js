@@ -29,10 +29,21 @@ $(function () {
         return false;
     })
 
-    $(".table").click(function (e){
-        e.preventDefault()
-        window.open("blogitems")
+    $(".tablet").click(function (e){
+        e.preventDefault();
+        window.open("blogitems");
     })
+
+    $(".to_home").click(function (e){
+       // e.preventDefault();
+
+        var href = e.target.getAttribute('href');
+        window.open(href,"_self");
+        //alert( href );
+       // return true;
+     //   window.back();
+    })
+
 
 
     $(".desktop").click(function (e) { // for each edit contact url
@@ -64,15 +75,15 @@ $(function () {
                     $('#btn-cost-of-service').html('Send E-Mail');
                     $('#success1').css({"color":"green"});
                     $('#success1').html(html.status_text);
-
                     $('#success1').show();
+                    $("#cost_of_service").modal('hide'); //убрать модальное окно
                 }
                 else {
                     $('#btn-cost-of-service').html('Send E-Mail');
                     $('#error1').css({"color":"red"});
                     $('#error1').html(html.status_text);
                     $('#error1').show();
-                    //$("#cost_of_service").modal('hide'); убрать модальное окно
+                    $("#cost_of_service").modal('hide'); //убрать модальное окно
 
                 }
             },
