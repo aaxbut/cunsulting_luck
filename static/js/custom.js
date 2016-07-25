@@ -10,7 +10,7 @@ $(function () {
     $('.nav-tabs a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
-    })
+    });
     $('.navbar-nav a').click(function (e) {
         e.preventDefault();
         $(this).parent('li').toggleClass('active');
@@ -18,9 +18,10 @@ $(function () {
 
 
         //$(this).find("a").attr("href");
-    })
+    });
 
     $('.phone').click(function (e) {
+        var api_gallery;
         api_gallery = ['/static/img/certs/certs_2.jpg', '/static/img/certs/certs_2.jpg', '/static/img/certs/certs_2.jpg'];
         api_titles = ['API Call Image 1', 'API Call Image 2', 'API Call Image 3'];
         api_descriptions = ['Description 1', 'Description 2', 'Description 3'];
