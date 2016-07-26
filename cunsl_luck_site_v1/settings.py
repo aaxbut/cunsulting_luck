@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'robots',
+    'django.contrib.sites',
 
     #'favicon',
 ]
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'cunsl_luck_site_v1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,8 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
-        },
+            ], },
     },
 ]
 
@@ -137,3 +138,11 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+# настраиваем робота
+SITE_ID = 1
+
+TEMPLATE_LOADERS = ['django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader',
+                    ]
+ROBOTS_USE_SITEMAP = False

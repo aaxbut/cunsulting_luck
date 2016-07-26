@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils import timezone
 from django.utils.html import format_html
+#from django.contrib.sites.models import Site
 
 
 class Post(models.Model):
