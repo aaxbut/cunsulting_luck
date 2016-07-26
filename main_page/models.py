@@ -64,6 +64,7 @@ class Contacts(models.Model):
     message = models.TextField()
     mail_contact = models.EmailField()
     name_from_contact = models.CharField(max_length=200)
+    is_delivered = models.BooleanField(default=False)
 
     def publish(self):
         self.created_date = timezone.now()
@@ -91,6 +92,7 @@ class ServiceCart(models.Model):
     service_in_cart = models.ManyToManyField(ServiceItems, related_name="servincart")
     # общая стоимость заказа
     total_cost_service = models.FloatField(default=0)
+    is_delivered = models.BooleanField(default=False)
 
     def publish(self):
         self.created_date = timezone.now()
