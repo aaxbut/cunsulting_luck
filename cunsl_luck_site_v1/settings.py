@@ -139,7 +139,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-# настраиваем робота
+# robots
 SITE_ID = 1
 
 TEMPLATE_LOADERS = ['django.template.loaders.filesystem.Loader',

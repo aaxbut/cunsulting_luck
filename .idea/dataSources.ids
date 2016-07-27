@@ -126,6 +126,7 @@
       <column name="message" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="mail_contact" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="name_from_contact" sqlType="VARCHAR(200)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="is_delivered" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
     </table>
     <table name="main_page_post" schema="" catalog="" type="TABLE">
@@ -144,6 +145,7 @@
       <column name="created_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="mail_contakt" sqlType="VARCHAR(254)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="total_cost_service" sqlType="REAL" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="is_delivered" sqlType="BOOL" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <primary-key columns="id"/>
     </table>
     <table name="main_page_servicecart_service_in_cart" schema="" catalog="" type="TABLE">
