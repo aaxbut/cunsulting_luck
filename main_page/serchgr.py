@@ -6,7 +6,7 @@ import vk
 
 # строка запроса токена
 
-# dfd = r"https://oauth.vk.com/access_token?client_id=5561499&client_secret=67mgnwNNHZFY2WvSf7dD&redirect_uri=https://oauth.vk.com/blank.html&code=a0dc8e06aede67017b"
+
 
 ## тут надо вернуть акссеесс токен
 api = vk.API(session)
