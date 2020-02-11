@@ -1,7 +1,7 @@
 Brlapi==0.6.1
 CDApplet==1.0
 CDBashApplet==1.0
-Django==1.9.5
+Django==1.11.28
 Mako==0.9.1
 MarkupSafe==0.18
 PasteDeploy==1.5.2
