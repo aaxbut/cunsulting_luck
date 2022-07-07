@@ -44,7 +44,7 @@ python-debian==0.1.21-nmu2ubuntu2
 pytils==0.3
 pyxdg==0.25
 repoze.lru==0.6
-requests==2.2.1
+requests==2.20.0
 scipy==0.17.1
 selection==0.0.11
 simplegeneric==0.8.1
